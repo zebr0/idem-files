@@ -1,0 +1,4 @@
+apt-get update
+
+# installation
+apt-get -y install openjdk-8-jdk
