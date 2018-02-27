@@ -1,0 +1,7 @@
+# common script for hosts running jetbrains software
+
+## include install/git
+
+# gitignore specific to jetbrains software
+## resource gitignore /etc
+git config --system core.excludesfile /etc/gitignore
