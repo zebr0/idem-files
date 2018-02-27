@@ -1,0 +1,12 @@
+# script provisioning a generic postgresql lxd host
+
+## include common/upgrade
+## include install/postgresql
+
+# restores a previous dump if exists
+[ ! -f /var/dump.tar.gz ] || systemctl start postgresql@9.5-main.service
+[ ! -f /var/dump.tar.gz ] || su postgres -c "pg_restore -d postgres /var/dump.tar.gz"
+[ ! -f /var/dump.tar.gz ] || rm /var/dump.tar.gz
+
+## include install/healthcheck
+## resource healthcheck.conf /etc
