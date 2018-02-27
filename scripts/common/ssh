@@ -1,0 +1,9 @@
+# common script for hosts having ssh interactions
+
+# creates user's ssh key
+su ubuntu -c "mkdir -p ~/.ssh"
+su ubuntu -c "ssh-keygen -f ~/.ssh/id_rsa -N ''"
+
+# ssh configuration
+## resource ssh_config.patch /tmp
+patch /etc/ssh/ssh_config /tmp/ssh_config.patch
