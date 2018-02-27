@@ -1,0 +1,10 @@
+[Unit]
+Description=Healthcheck Service
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/healthcheck.py
+
+[Install]
+WantedBy=multi-user.target

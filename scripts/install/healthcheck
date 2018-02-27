@@ -1,0 +1,5 @@
+## resource healthcheck.py /usr/local/bin
+chmod +x /usr/local/bin/healthcheck.py
+
+## resource healthcheck.service /lib/systemd/system
+systemctl enable healthcheck.service
