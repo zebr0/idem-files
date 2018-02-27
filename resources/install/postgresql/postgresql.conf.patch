@@ -1,0 +1,4 @@
+59c59
+< #listen_addresses = 'localhost'		# what IP address(es) to listen on;
+---
+> listen_addresses = '0.0.0.0'			# what IP address(es) to listen on;
