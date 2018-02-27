@@ -1,0 +1,7 @@
+## include common/ssh
+
+# installation
+apt-get -y install git
+
+# adds github's public keys to known hosts
+su ubuntu -c "ssh-keyscan -H github.com >> ~/.ssh/known_hosts"
