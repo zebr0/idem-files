@@ -1,0 +1,12 @@
+## include common/ssh
+
+# installation
+apt-get -y install zfsutils-linux
+apt-get -y -t xenial-backports install lxd
+
+# configuration
+## template preseed.yml /tmp
+cat /tmp/preseed.yml | lxd init --preseed
+
+## resource lxd-compose.py /usr/local/bin
+chmod +x /usr/local/bin/lxd-compose.py
