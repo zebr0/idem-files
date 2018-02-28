@@ -1,0 +1,5 @@
+# installs boto3
+apt-get -y install python3-boto3
+
+## resource aws.py /usr/local/bin
+chmod +x /usr/local/bin/aws.py
