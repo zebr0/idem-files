@@ -1,0 +1,26 @@
+## include install/jdk
+
+# downloads and extracts into /opt
+mkdir /opt/wildfly
+wget -q https://download.jboss.org/wildfly/10.0.0.Final/wildfly-10.0.0.Final.tar.gz -O /tmp/wildfly.tar.gz
+tar -xf /tmp/wildfly.tar.gz -C /opt/wildfly --strip 1
+
+# downloads the jdbc driver
+wget -q https://jdbc.postgresql.org/download/postgresql-42.1.4.jar -O /tmp/postgresql.jar
+
+# creates a wildfly user to own wildfly binaries
+useradd wildfly
+chown -R wildfly:wildfly /opt/wildfly
+
+# creates and enables a service file
+## resource wildfly.service /lib/systemd/system
+systemctl enable wildfly.service
+systemctl start wildfly.service
+
+# let's give the server some time to start
+sleep 10
+
+# configuration
+su wildfly -c "/opt/wildfly/bin/add-user.sh admin admin"
+## resource wildfly.conf /tmp
+su wildfly -c "/opt/wildfly/bin/jboss-cli.sh -c --file=/tmp/wildfly.conf"

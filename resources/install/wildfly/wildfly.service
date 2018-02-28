@@ -1,0 +1,11 @@
+[Unit]
+Description=Wildfly Application Server
+After=network-online.target
+
+[Service]
+Type=simple
+User=wildfly
+ExecStart=/opt/wildfly/bin/standalone.sh
+
+[Install]
+WantedBy=multi-user.target
