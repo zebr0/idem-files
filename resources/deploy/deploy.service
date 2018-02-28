@@ -1,0 +1,11 @@
+[Unit]
+Description=Maven Deployment Script
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+ExecStart=/usr/local/bin/deploy.sh
+
+[Install]
+WantedBy=multi-user.target

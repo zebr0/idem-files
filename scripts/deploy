@@ -1,0 +1,10 @@
+# script provisioning a generic maven-deploying lxd host
+
+## include common/upgrade
+## include install/maven
+
+## resource deploy.sh /usr/local/bin
+chmod +x /usr/local/bin/deploy.sh
+
+## resource deploy.service /lib/systemd/system
+systemctl enable deploy.service
