@@ -1,0 +1,6 @@
+# script provisioning all aws ec2 instances
+
+## include common/upgrade
+## include install/lxd
+
+lxd-compose.py init $(cat /etc/projectname) $(cat /etc/stagename)
