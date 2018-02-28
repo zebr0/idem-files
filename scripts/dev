@@ -1,0 +1,12 @@
+# script provisioning a java development lxd host
+
+## include wildfly
+## include install/intellij
+
+# wildfly will be started manually so we stop and delete the service
+systemctl stop wildfly.service
+systemctl disable wildfly.service
+rm /lib/systemd/system/wildfly.service
+
+# gives wildfly binaries back to ubuntu user
+chown -R ubuntu:ubuntu /opt/wildfly
