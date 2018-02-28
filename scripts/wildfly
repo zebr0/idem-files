@@ -1,0 +1,7 @@
+# script provisioning a generic wildfly lxd host
+
+## include common/upgrade
+## include install/wildfly
+
+## include install/healthcheck
+## resource healthcheck.conf /etc
