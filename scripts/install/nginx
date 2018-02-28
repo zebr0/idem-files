@@ -1,0 +1,11 @@
+apt-get update
+
+# installation
+apt-get -y install nginx
+
+# creates a self-signed certificate if none provided
+[ -f /etc/ssl/certs/crt.pem ] || openssl req -new -newkey rsa:4096 -days 90 -nodes -x509 -subj "/C=FR/CN=example.com" -keyout /etc/ssl/private/key.pem -out /etc/ssl/certs/crt.pem
+
+# configuration
+## resource proxy.conf /etc/nginx/sites-available
+ln -sf /etc/nginx/sites-available/proxy.conf /etc/nginx/sites-enabled/default
