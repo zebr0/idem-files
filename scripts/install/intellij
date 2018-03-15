@@ -5,8 +5,8 @@
 apt-get -y install openjdk-8-source
 
 # downloads, verifies and installs intellij into /opt
-cd /tmp && wget -q https://download.jetbrains.com/idea/ideaIU-2017.3.4.tar.gz
-cd /tmp && wget -q https://download.jetbrains.com/idea/ideaIU-2017.3.4.tar.gz.sha256
+cd /tmp && wget -q https://download.jetbrains.com/idea/ideaIU-2017.3.5.tar.gz
+cd /tmp && wget -q https://download.jetbrains.com/idea/ideaIU-2017.3.5.tar.gz.sha256
 cd /tmp && sha256sum -c --status ideaIU-*.tar.gz.sha256
 cd /tmp && tar xf ideaIU-*.tar.gz
 mv /tmp/idea-IU-* /opt/intellij
