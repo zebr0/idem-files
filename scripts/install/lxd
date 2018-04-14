@@ -3,10 +3,8 @@
 # installation
 apt-get -y install zfsutils-linux
 apt-get -y -t xenial-backports install lxd
+apt-get -y install lxd-compose
 
 # configuration
 ## template preseed.yml /tmp
 cat /tmp/preseed.yml | lxd init --preseed
-
-## resource lxd-compose.py /usr/local/bin
-chmod +x /usr/local/bin/lxd-compose.py
