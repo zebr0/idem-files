@@ -33,29 +33,3 @@ profiles:
         type: nic
         nictype: bridged
         parent: lxd0
-  - name: image
-    config:
-      user.user-data: |
-        #cloud-config
-        runcmd:
-          - add-apt-repository -y ppa:zebr0/master
-          - apt-get update
-          - apt-get -y install idem
-          - idem run $(cat /etc/hostname)
-        power_state:
-          mode: poweroff
-  - name: container
-    config:
-      user.user-data: |
-        #cloud-config
-        ssh_authorized_keys:
-          - {{ cat /home/ubuntu/.ssh/id_rsa.pub }}
-        runcmd:
-          - mv /etc/hostname /etc/containername
-          - cat /etc/containername | cut -d'-' -f1 > /etc/hostname
-          - cat /etc/containername | cut -d'-' -f2 > /etc/projectname
-          - cat /etc/containername | cut -d'-' -f3 > /etc/stagename
-          - idem run $(cat /etc/hostname)
-        power_state:
-          mode: reboot
-      boot.autostart: true
