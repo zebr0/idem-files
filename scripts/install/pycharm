@@ -1,8 +1,9 @@
 ## include common/jetbrains
 
 # downloads, verifies and installs pycharm into /opt
-cd /tmp && wget -q https://download.jetbrains.com/python/pycharm-community-2017.3.4.tar.gz
-cd /tmp && wget -q https://download.jetbrains.com/python/pycharm-community-2017.3.4.tar.gz.sha256
+cd /tmp && wget -q https://download.jetbrains.com/python/pycharm-community-2018.1.tar.gz
+cd /tmp && wget -q https://download.jetbrains.com/python/pycharm-community-2018.1.tar.gz.sha256
 cd /tmp && sha256sum -c --status pycharm-community-*.tar.gz.sha256
 cd /tmp && tar xf pycharm-community-*.tar.gz
 mv /tmp/pycharm-*/ /opt/pycharm
+chown -R ubuntu:ubuntu /opt/pycharm
