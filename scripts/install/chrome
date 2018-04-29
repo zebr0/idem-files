@@ -1,7 +1,6 @@
 # adds google key and chrome repository
 wget -O- https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
 add-apt-repository "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
-apt-get update
 
 # installation
 apt-get -y install google-chrome-stable

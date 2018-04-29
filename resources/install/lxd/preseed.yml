@@ -22,7 +22,6 @@ profiles:
           - {{ cat /home/ubuntu/.ssh/id_rsa.pub }}
         runcmd:
           - add-apt-repository -y ppa:zebr0/master
-          - apt-get update
           - apt-get -y install idem
     devices:
       root:
