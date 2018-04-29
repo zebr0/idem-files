@@ -1,5 +1,3 @@
-apt-get update
-
 # installation
 apt-get -y install nginx
 

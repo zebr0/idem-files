@@ -1,6 +1,4 @@
 ## include install/jdk
 
-apt-get update
-
 # installation
 apt-get -y install maven
