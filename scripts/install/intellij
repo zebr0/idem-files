@@ -4,10 +4,5 @@
 # installs jdk 8 sources
 apt-get -y install openjdk-8-source
 
-# downloads, verifies and installs intellij into /opt
-cd /tmp && wget -q https://download.jetbrains.com/idea/ideaIU-2018.1.tar.gz
-cd /tmp && wget -q https://download.jetbrains.com/idea/ideaIU-2018.1.tar.gz.sha256
-cd /tmp && sha256sum -c --status ideaIU-*.tar.gz.sha256
-cd /tmp && tar xf ideaIU-*.tar.gz
-mv /tmp/idea-IU-* /opt/intellij
-chown -R ubuntu:ubuntu /opt/intellij
+# installs intellij using snapd
+snap install intellij-idea-ultimate --classic
