@@ -2,7 +2,7 @@
 
 # installation
 apt-get -y install zfsutils-linux
-apt-get -y -t xenial-backports install lxd
+apt-get -y install lxd
 apt-get -y install lxd-compose
 
 # configuration
