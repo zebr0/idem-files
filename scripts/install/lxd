@@ -1,10 +1,11 @@
 ## include common/ssh
 
 # installation
+apt-get -y install templ
 apt-get -y install zfsutils-linux
 apt-get -y install lxd
 apt-get -y install lxd-compose
 
 # configuration
-## template preseed.yml /tmp
-cat /tmp/preseed.yml | lxd init --preseed
+## resource preseed.yml /tmp
+cat /tmp/preseed.yml | templ | lxd init --preseed
