@@ -7,22 +7,13 @@ networks:
   - name: lxd0
     type: bridge
     config:
-      ipv4.address: 10.42.0.1/24
+      ipv4.address: 10.0.0.1/24
       ipv4.nat: true
       ipv6.address: none
       dns.mode: dynamic
-      dns.domain: lxd
 
 profiles:
   - name: default
-    config:
-      user.user-data: |
-        #cloud-config
-        ssh_authorized_keys:
-          - {{ cat /home/ubuntu/.ssh/id_rsa.pub }}
-        runcmd:
-          - add-apt-repository -y ppa:zebr0/master
-          - apt-get -y install idem
     devices:
       root:
         type: disk

@@ -3,4 +3,7 @@
 ## include common/upgrade
 ## include install/lxd
 
-lxd-compose.py init $(cat /etc/projectname) $(cat /etc/stagename)
+apt-get install zebr0-template
+
+zebr0-lookup lxd-compose.yml | zebr0-template > /etc/zebr0/lxd-compose.yml
+cat /etc/zebr0/lxd-compose.yml | lxd-compose create
