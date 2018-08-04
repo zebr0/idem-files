@@ -1,6 +1,7 @@
 # script provisioning all aws ec2 instances
 
 ## include common/upgrade
+## include common/ssh
 ## include install/lxd
 
 apt-get install zebr0-template
