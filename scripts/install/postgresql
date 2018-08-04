@@ -1,16 +1,8 @@
 # installation
-apt-get -y install postgresql-9.5
-
-# upon installation, a cluster is created with a wrong locale so we have to recreate it
-systemctl stop postgresql@9.5-main.service
-pg_dropcluster 9.5 main
-pg_createcluster --locale C.UTF-8 9.5 main
+apt-get -y install postgresql-10
 
 # configuration
 ## resource postgresql.conf.patch /tmp
-su postgres -c "patch /etc/postgresql/9.5/main/postgresql.conf /tmp/postgresql.conf.patch"
+su postgres -c "patch /etc/postgresql/10/main/postgresql.conf /tmp/postgresql.conf.patch"
 ## resource pg_hba.conf.patch /tmp
-su postgres -c "patch /etc/postgresql/9.5/main/pg_hba.conf /tmp/pg_hba.conf.patch"
-
-# enables the cluster to start automatically on boot
-systemctl enable postgresql@9.5-main.service
+su postgres -c "patch /etc/postgresql/10/main/pg_hba.conf /tmp/pg_hba.conf.patch"
